@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: unless-stopped
+    environment:
+      - 'POSTGRES_DB=cris_play_db'
+      - 'POSTGRES_PASSWORD=cris.proyect'
+      - 'POSTGRES_USER=cris'
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/data/postgres
+volumes:
+      pgdata:
